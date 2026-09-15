@@ -64,3 +64,25 @@ func mapFunc(document string) []Pair {
 	} return pairs
 }
 
+
+func shuffleAndSort(allPairs [][]Pair) map[string][]int {
+	grouped := make(map[string][]int)
+	for _, pairs := range allPairs {
+		for _,p:=range pairs {
+			grouped[p.Word] = append(grouped[[p.Word], p.Count])
+		}
+	}
+	return grouped
+}
+
+// Reduce function
+func reduceFunc(counts []int) int {
+	sum := 0
+	for _, c := range counts {
+		sum += c
+	}
+	return sum
+}
+
+//output section
+
